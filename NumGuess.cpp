@@ -14,7 +14,7 @@ int main()
 			
 	srand(time(NULL));		
 	
-	cout << "需要玩游戏吗（Y/N）？";
+	cout << "Wanna play the game(Y/N)?";
 	cin >> choice;
 	
 	while (choice == 'Y'){
@@ -28,25 +28,25 @@ int main()
 		}while(num_3 == num_2 || num_3 == num_1); // Make sure random number 3 is not equal to number 1 and number 2
 		while (j <= 7){
 			++j;
-			cout << "请输入你猜测的数字:";
+			cout << "Please guess the numbers:";
 			cin >> guess_1 >> guess_2 >> guess_3;
 			A = ((num_1 == guess_1) + (num_2 == guess_2) + (num_3 == guess_3));
 			B = ((num_1 == guess_2) + (num_1 == guess_3) + (num_2 == guess_1) + (num_2 == guess_3) + (num_3 == guess_1) + (num_3 == guess_2));	
 			if (A == 3){	
-				cout << "恭喜，你猜对了";
+				cout << "Congratulations! You have won the game";
 				++ win_times;
 				break;
 			}
 			else cout << A << 'A' << B << 'B' << '\n';
 		}
-		if ((j == 8) && (A != 3)) cout << "很遗憾，你没有在规定次数内猜对。答案是 " << num_1 <<' '<< num_2 <<' '<< num_3;
+		if ((j == 8) && (A != 3)) cout << "I'm sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3;
 		++ times;
-		cout << "需要玩游戏吗（Y/N）？";          // User can play many times they want
+		cout << "Wanna play the game(Y/N)?";      // User can play many times they want
 		cin >> choice;		
 	}
 	lose_times = times - win_times;
 	
-	cout << "你一共玩了" << times << "局，赢了" << win_times << "局，输了" << lose_times << "局";
+	cout << "You have played" << times << "round(s), winning" << win_times << "round(s), losing" << lose_times << "round(s)";
 	
 	return 0;
 }
