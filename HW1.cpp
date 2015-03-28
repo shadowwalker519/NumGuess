@@ -9,8 +9,8 @@ int main()
 	int num_1, num_2, num_3, guess_1, guess_2, guess_3, i, j, A, B, win_times = 0, times = 0, lose_times = 0;
 	/* win_times: how many times the user wins, times: how many times the user plays, lose_times: how many times the user loses
 	   A: how many numbers guessed have the same value and location as the random numbers generated 
-       B: how many numbers guessed have the same value but different location as the random numbers generated 
-       num_1, num_2, num_3: numbers randomly generated, guess_1, guess_2, guess_3:numbers user guessed*/
+           B: how many numbers guessed have the same value but different location as the random numbers generated 
+           num_1, num_2, num_3: numbers randomly generated, guess_1, guess_2, guess_3:numbers user guessed*/
 			
 	srand(time(NULL));		
 	
