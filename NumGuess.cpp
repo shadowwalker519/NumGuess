@@ -14,7 +14,7 @@ int main()
 			
 	srand(time(NULL));		
 	
-	cout << "Wanna play the game(Y/N)?";
+	cout << "Wanna play the game(Y/N)?" << endl;
 	cin >> choice;
 	
 	while (choice == 'Y'){
@@ -28,25 +28,25 @@ int main()
 		}while(num_3 == num_2 || num_3 == num_1); // Make sure random number 3 is not equal to number 1 and number 2
 		while (j <= 7){
 			++j;
-			cout << "Please guess the numbers:";
+			cout << "Please guess the numbers:" << endl;
 			cin >> guess_1 >> guess_2 >> guess_3;
 			A = ((num_1 == guess_1) + (num_2 == guess_2) + (num_3 == guess_3));
 			B = ((num_1 == guess_2) + (num_1 == guess_3) + (num_2 == guess_1) + (num_2 == guess_3) + (num_3 == guess_1) + (num_3 == guess_2));	
 			if (A == 3){	
-				cout << "Congratulations! You have won the game";
+				cout << "Congratulations! You have won the game" << endl;
 				++ win_times;
 				break;
 			}
 			else cout << A << 'A' << B << 'B' << '\n';
 		}
-		if ((j == 8) && (A != 3)) cout << "I'm sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3;
+		if ((j == 8) && (A != 3)) cout << "I'm sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3 << endl;
 		++ times;
-		cout << "Wanna play the game(Y/N)?";      // User can play many times they want
+		cout << "Wanna play the game(Y/N)?" << endl;      // User can play many times they want
 		cin >> choice;		
 	}
 	lose_times = times - win_times;
 	
-	cout << "You have played" << times << "round(s), winning" << win_times << "round(s), losing" << lose_times << "round(s)";
+	cout << "You have played" << times << "round(s), winning" << win_times << "round(s), losing" << lose_times << "round(s)" << endl;
 	
 	return 0;
 }
