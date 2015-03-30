@@ -46,7 +46,7 @@ int main()
 	}
 	lose_times = times - win_times;
 	
-	cout << "You have played" << times << "round(s), winning" << win_times << "round(s), losing" << lose_times << "round(s)" << endl;
+	cout << "You have played " << times << " round(s), winning " << win_times << " round(s), losing " << lose_times << " round(s)." << endl;
 	
 	return 0;
 }
