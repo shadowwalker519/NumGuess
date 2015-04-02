@@ -14,10 +14,15 @@ int main()
 			
 	srand(time(NULL));		
 	
-	cout << "Wanna play the game(Y/N)?" << endl;
+	cout << "Start the game(Y/N)?" << endl;
 	cin >> choice;
+	while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
+		{
+			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
+			cin >> choice;
+		}
 	
-	while (choice == 'Y'){
+	while (choice == 'Y' || choice == 'y'){
 		j = 1;
 		num_1 = rand() % 10;
 		do {
@@ -33,16 +38,21 @@ int main()
 			A = ((num_1 == guess_1) + (num_2 == guess_2) + (num_3 == guess_3));
 			B = ((num_1 == guess_2) + (num_1 == guess_3) + (num_2 == guess_1) + (num_2 == guess_3) + (num_3 == guess_1) + (num_3 == guess_2));	
 			if (A == 3){	
-				cout << "Congratulations! You have won the game" << endl;
+				cout << "Congratulations! You have won the game." << endl;
 				++ win_times;
 				break;
 			}
 			else cout << A << 'A' << B << 'B' << '\n';
 		}
-		if ((j == 8) && (A != 3)) cout << "I'm sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3 << endl;
+		if ((j == 8) && (A != 3)) cout << "Sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3 << endl;
 		++ times;
-		cout << "Wanna play the game(Y/N)?" << endl;      // User can play many times they want
-		cin >> choice;		
+		cout << "Start the game(Y/N)?" << endl;      // User can play many times they want
+		cin >> choice;
+		while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
+		{
+			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
+			cin >> choice;
+		}
 	}
 	lose_times = times - win_times;
 	
