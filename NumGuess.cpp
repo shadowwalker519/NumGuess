@@ -3,6 +3,23 @@
 #include<ctime>
 using namespace std;
 
+char input();
+
+char input()                                              // Judge whether the input is legal
+{
+	string choice;
+	while(true)
+	{
+		try{cin >> choice;
+			if(choice == "y" || choice == "Y" || choice == "n" || choice == "N") return choice[0];
+			throw 0;
+		}
+		catch(int a){
+			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
+		}
+	}
+}
+
 int main()
 {
 	char choice;
@@ -15,14 +32,7 @@ int main()
 	srand(time(NULL));		
 	
 	cout << "Start the game(Y/N)?" << endl;
-	cin >> choice;
-	cin.sync();
-	while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
-	{
-		cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
-		cin >> choice;
-		cin.sync();
-	}
+	choice = input();
 	//Ignore strange inputs
 	
 	while (choice == 'Y' || choice == 'y'){
@@ -50,14 +60,7 @@ int main()
 		if ((j == 8) && (A != 3)) cout << "Sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3 << endl;
 		++ times;
 		cout << "Continue(Y/N)?" << endl;         // User can play many times they want
-		cin >> choice;
-		cin.sync();
-		while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
-		{
-			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
-			cin >> choice;
-			cin.sync();
-		}
+		choice = input();
 	}
 	lose_times = times - win_times;
 	
