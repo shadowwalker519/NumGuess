@@ -16,11 +16,14 @@ int main()
 	
 	cout << "Start the game(Y/N)?" << endl;
 	cin >> choice;
+	cin.sync();
 	while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
 	{
 		cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
 		cin >> choice;
+		cin.sync();
 	}
+	//Ignore strange inputs
 	
 	while (choice == 'Y' || choice == 'y'){
 		j = 1;
@@ -46,12 +49,14 @@ int main()
 		}
 		if ((j == 8) && (A != 3)) cout << "Sorry, you haven't got the right answer. The key is " << num_1 <<' '<< num_2 <<' '<< num_3 << endl;
 		++ times;
-		cout << "Start the game(Y/N)?" << endl;      // User can play many times they want
+		cout << "Continue(Y/N)?" << endl;         // User can play many times they want
 		cin >> choice;
+		cin.sync();
 		while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
 		{
 			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
 			cin >> choice;
+			cin.sync();
 		}
 	}
 	lose_times = times - win_times;
