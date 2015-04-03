@@ -17,10 +17,10 @@ int main()
 	cout << "Start the game(Y/N)?" << endl;
 	cin >> choice;
 	while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
-		{
-			cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
-			cin >> choice;
-		}
+	{
+		cout << "Please make your choice within 'y' or 'Y' or 'n' or 'N'." << endl;
+		cin >> choice;
+	}
 	
 	while (choice == 'Y' || choice == 'y'){
 		j = 1;
